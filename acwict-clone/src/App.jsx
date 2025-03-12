@@ -13,7 +13,6 @@ function App() {
   return (
     <React.Fragment>
       <Sidebar />
-      
       <div className="main-content">
       <Navbar />
         <Hero />

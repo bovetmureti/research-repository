@@ -13,7 +13,7 @@ const categories = [
   { name: 'C8' }
 ];
 
-const subItems = ['Neutrality', 'Outcome', 'Impact'];
+const subItems = ['Narrative', 'Outcome', 'KPI'];
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ const Sidebar = () => {
       
       <div className={`sidebar ${isOpen ? 'active' : ''}`}>
         <div className="sidebar-header">
-          <h2>Categories</h2>
+          <h2>DEP</h2>
           <div className="sidebar-close" onClick={toggleSidebar}>
             <FaTimes />
           </div>
