@@ -77,8 +77,16 @@ section {
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Ensure the left section takes full available width */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .logo h1 {
@@ -87,7 +95,9 @@ section {
   font-size: 1.8rem;
 }
 
+/* Navigation Menu */
 .nav-menu {
+  margin-left: auto; /* Pushes the menu items to the far right */
   display: flex;
   list-style: none;
   align-items: center;
@@ -100,18 +110,33 @@ section {
 .nav-item a {
   color: var(--text-color);
   font-weight: 500;
+  position: relative;
   transition: color 0.3s ease;
 }
 
-.nav-item a:hover {
-  color: var(--primary-color);
+/* Underline hover animation for menu links */
+.nav-item a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
+.nav-item a:hover::after {
+  width: 100%;
+}
+
+/* Donate button styling */
 .donate-btn {
   background-color: var(--secondary-color);
   color: var(--white) !important;
 }
 
+/* Menu Icon (for mobile) */
 .menu-icon {
   display: none;
   font-size: 1.5rem;
@@ -391,9 +416,9 @@ footer {
     background-color: var(--white);
     width: 100%;
     text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
     padding: 20px 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-menu.active {
