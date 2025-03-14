@@ -6,9 +6,9 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-about">
-            <h3>ACWICT</h3>
+            <h3>KICTANET</h3>
             <p>
-              African Center for Women, Information and Communications Technology is a non-profit organization dedicated to empowering women and youth through technology training.
+              KICTANET
             </p>
             <div className="social-icons">
               <a href="#"><FaFacebook /></a>
@@ -35,13 +35,13 @@ const Footer = () => {
             <ul>
               <li><FaMapMarkerAlt /> 123 Technology Road, Nairobi, Kenya</li>
               <li><FaPhone /> +254 123 456 789</li>
-              <li><FaEnvelope /> info@acwict.org</li>
+              <li><FaEnvelope /> info@kictanet.org</li>
             </ul>
           </div>
         </div>
         
         <div className="copyright">
-          <p>&copy; {new Date().getFullYear()} ACWICT. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} KICTANET. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
