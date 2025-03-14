@@ -3,7 +3,7 @@ const About = () => {
       <section id="about" className="about">
         <div className="container">
           <div className="section-header">
-            <h2>About ACWICT</h2>
+            <h2>About KICTANET</h2>
             <div className="underline"></div>
           </div>
           <div className="about-content">
@@ -13,7 +13,7 @@ const About = () => {
             <div className="about-text">
               <h3>Our Mission</h3>
               <p>
-                ACWICT is dedicated to empowering women and youth in Africa through technology training and professional development programs that enhance their participation in the global economy.
+                KICTANET is dedicated to empowering women and youth in Africa through technology training and professional development programs that enhance their participation in the global economy.
               </p>
               <h3>Our Vision</h3>
               <p>
