@@ -1,116 +1,111 @@
 /* Sidebar.css */
-
 .sidebar {
-    width: 150px;
-    background: var(--white);
-    height: 100vh;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    padding: 20px;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  }
+  width: 170px; /* Fixed reduced width */
+  background: var(--white);
+  position: fixed;
+  top: 80px; /* Starts immediately below the 80px header */
+  left: 0;
+  height: calc(100vh - 80px); /* Full height minus header */
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease; /* Only transform transitions for mobile */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
 
-  /* Expand sidebar slightly on hover (desktop) */
-.sidebar:hover {
-    width: 180px;
+/* Removed the expanding hover effect */
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add spacing below header */
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* Close icon (mobile) */
+.sidebar-close {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Sidebar menu and items */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.sidebar-item {
+  position: relative;
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0; /* Separator for each menu item */
+}
+
+.sidebar-category {
+  display: block;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Submenu (for Neutrality, Outcome, Impact) */
+.sidebar-submenu {
+  list-style: none;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* On hover, expand submenu items */
+.sidebar-item:hover .sidebar-submenu {
+  max-height: 200px; /* Adjust as needed */
+}
+
+.sidebar-subitem {
+  padding: 5px 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  border-bottom: 1px solid #f0f0f0; /* Separator for subitems */
+}
+
+/* Hamburger icon for mobile */
+.sidebar-hamburger {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 110;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 105;
+    top: 80px;
+    height: calc(100vh - 80px);
   }
   
-  /* Header inside sidebar */
-  .sidebar .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .sidebar.active {
+    transform: translateX(0);
   }
   
-  .sidebar .sidebar-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-  }
-  
-  /* Close icon (visible on mobile) */
-  .sidebar .sidebar-close {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
-  /* Sidebar menu */
-  .sidebar .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  .sidebar .sidebar-item {
-    position: relative;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar .sidebar-category {
+  .sidebar-close {
     display: block;
-    font-weight: 600;
-    color: var(--text-color);
-    padding: 10px 0;
-    cursor: pointer;
   }
   
-  /* Hide submenu by default */
-  .sidebar .sidebar-submenu {
-    list-style: none;
-    padding-left: 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  
-  /* Reveal submenu on hover */
-  .sidebar .sidebar-item:hover .sidebar-submenu {
-    max-height: 200px; /* adjust height as needed */
-  }
-  
-  .sidebar .sidebar-subitem {
-    padding: 5px 0;
-    font-size: 0.9rem;
-    color: var(--text-color);
-  }
-  
-  /* Hamburger icon (mobile only) */
   .sidebar-hamburger {
-    display: none;
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: var(--primary-color);
-    z-index: 110;
+    display: block;
   }
-  
-  /* Responsive styles for mobile */
-  @media (max-width: 768px) {
-    /* Hide sidebar by sliding out */
-    .sidebar {
-      transform: translateX(-100%);
-      z-index: 105;
-    }
-    
-    /* When active, bring sidebar into view */
-    .sidebar.active {
-      transform: translateX(0);
-    }
-    
-    /* Show close icon inside sidebar */
-    .sidebar .sidebar-close {
-      display: block;
-    }
-    
-    /* Display hamburger menu */
-    .sidebar-hamburger {
-      display: block;
-    }
-  }
-  
+}
