@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../index.css';
+import logoImage from "../assets/logo-kictanet.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
         <div className="navbar-left">
           <div className="logo">
             <a href="/">
-              <h1>ACWICT</h1>
+              <img src={logoImage} alt="KICTANET" className='logo-img'/>
             </a>
           </div>
           <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>

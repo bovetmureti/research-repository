@@ -86,6 +86,11 @@ section {
   flex: 1;
 }
 
+.logo img.logo-img {
+  height: 50px;
+  width: auto;
+}
+
 .logo h1 {
   color: var(--primary-color);
   margin: 0;
