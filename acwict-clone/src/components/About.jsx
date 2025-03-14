@@ -8,7 +8,7 @@ const About = () => {
           </div>
           <div className="about-content">
             <div className="about-image">
-              <img src="/api/placeholder/450/300" alt="Women in technology" />
+              <img src="../assets/tech.jpg" alt="Women in technology" />
             </div>
             <div className="about-text">
               <h3>Our Mission</h3>
